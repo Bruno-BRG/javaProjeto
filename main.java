@@ -2,19 +2,7 @@
 class Contato {
     String nome;
     String numero;
-    Contato proximo;
-    Contato anterior;
-
-    // Construtor
-    public Contato(String nome, String numero) {
-        this.nome = nome;
-        this.numero = numero;
-        this.proximo = null;
-        this.anterior = null;
-    }
-}
-
-// Adicionar um contato
+    Contato proximo// Adicionar um contato
 class ListaTelefonica {
     Contato inicio;
     Contato fim;
