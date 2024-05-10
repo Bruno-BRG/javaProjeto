@@ -12,17 +12,7 @@ class ListaTelefonica {
         this.inicio = null;
         this.fim = null;
     }
-    
-    // Adiciona um contato ao final da lista
-    public void adicionarContato(String nome, String numero) {
-        Contato novoContato = new Contato(nome, numero);
-        if (inicio == null) {
-            inicio = novoContato;
-            fim = novoContato;
-        } else {
-            fim.proximo = novoContato;
-            novoContato.anterior = fim;
-            fim = novoContato;
+   
         }
     }
 
