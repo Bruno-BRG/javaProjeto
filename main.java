@@ -16,21 +16,7 @@ class ListaTelefonica {
         }
     }
 
-    // Imprime a lista de contatos
-    public void imprimirLista() {
-        Contato atual = inicio;
-        while (atual != null) {
-            System.out.println("Nome: " + atual.nome + ", Número: " + atual.numero);
-            atual = atual.proximo;
-        }
-    }
-}
-
-// Adicionar um contato
-public class Main {
-    public static void main(String[] args) {
-        ListaTelefonica lista = new ListaTelefonica();
-        lista.adicionarContato("João", "123456789");
+    // Imprime
         lista.adicionarContato("Maria", "987654321");
         lista.imprimirLista();
     }
