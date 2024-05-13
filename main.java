@@ -1,4 +1,3 @@
-
 package mercadoLivre;
 
 import java.util.Scanner;
@@ -19,24 +18,36 @@ public class Main {
 			option = scanner.nextInt();
 			switch (option) {
 				case 1:
-					// i want to add a new client to the Client class if this option is picked
-					System.out.println("Enter the name of the client: ");			
-					String name = scanner.next();
-					System.out.println("Enter the last name of the client: ");
-					String lastName = scanner.next();
+					System.out.println("Enter the name of the client: ");
+					String nameClient = scanner.next();
 					System.out.println("Enter the email of the client: ");
-					String email = scanner.next();
+					String emailClient = scanner.next();
 					System.out.println("Enter the zip code of the client: ");
-					String zip = scanner.next();
+					String zipClient = scanner.next();
 					System.out.println("Enter the password of the client: ");
-					String password = scanner.next();
+					String passwordClient = scanner.next();
 					System.out.println("Enter the username of the client: ");
-					String username = scanner.next();
-					Client client = new Client(name, lastName, email, zip, password, username);
+					String usernameClient = scanner.next();
+					Client client = new Client(nameClient, emailClient, zipClient, passwordClient, usernameClient);
 					break;
+
 				case 2:
+					System.out.println("Enter the name of the buyer: ");
+					String nameBuyer = scanner.next();
+					System.out.println("Enter the email of the buyer: ");
+					String emailBuyer = scanner.next();
+					System.out.println("Enter the zip code of the buyer: ");
+					String zipBuyer = scanner.next();
+					System.out.println("Enter the password of the buyer: ");
+					String passwordBuyer = scanner.next();
+					System.out.println("Enter the username of the buyer: ");
+					String usernameBuyer = scanner.next();
+					Buyer buyer = new Buyer(nameBuyer, emailBuyer, zipBuyer, passwordBuyer, usernameBuyer);
 					break;
-				case 3:	
+				case 3:
+					accountLogin accountLogin = new accountLogin();
+					accountLogin.login();
+					system.out.println("You are logged in");
 					break;
 				case 4:
 					break;
@@ -53,4 +64,3 @@ public class Main {
 		}
 	}
 }
-
