@@ -18,7 +18,7 @@ public class accountLogin {
 		Buyer currentBuyer = buyerList.head;
 		while (currentClient != null) {
 			if (currentClient.getUsername().equals(username) && currentClient.getPassword().equals(password)) {
-				System.out.println("Welcome " + currentClient.getName());
+				System.out.println("baubuinos dancantes " + currentClient.getName());
 				break;
 			}
 			currentClient = currentClient.getNext();
