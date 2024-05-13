@@ -3,13 +3,13 @@ package mercadoLivre;
 import java.util.Scanner;
 
 public class Buyer {
-	public String nameBuyer;
-	public String emailBuyer;
-	public String zipBuyer;
-	public String passwordBuyer;
-	public String usernameBuyer;
-	public Buyer nextBuyer;
-	public Buyer previousBuyer;
+	String nameBuyer;
+	String emailBuyer;
+	String zipBuyer;
+	String passwordBuyer;
+	String usernameBuyer;
+	Buyer nextBuyer;
+	Buyer previousBuyer;
 
 	public Buyer(String name, String email, String zip, String password, String username) {
 		this.nameBuyer = name;

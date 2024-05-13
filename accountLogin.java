@@ -2,29 +2,33 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
-// i want this class to run through the client and buyer class check the node in their lists and compare the the inout from the user to see if there is a valid account matching the input is so tell that the login was sucesscfullif not that it was unsuccsefull
+// i want this class to go though the list of clients and buyers and check if the username and password match
 
 public class accountLogin {
+	ClientList clientList = new ClientList();
+	BuyerList buyerList = new BuyerList();
+	Scanner input = new Scanner(System.in);
+
 	public void login() {
-		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter your username: ");
-		String username = scanner.next();
+		String username = input.nextLine();
 		System.out.println("Enter your password: ");
-		String password = scanner.next();
+		String password = input.nextLine();
+		Client currentClient = clientList.head;
+		Buyer currentBuyer = buyerList.head;
 		while (currentClient != null) {
 			if (currentClient.getUsername().equals(username) && currentClient.getPassword().equals(password)) {
-				System.out.println("Login successful");
+				System.out.println("Welcome " + currentClient.getName());
 				break;
 			}
 			currentClient = currentClient.getNext();
 		}
 		while (currentBuyer != null) {
 			if (currentBuyer.getUsername().equals(username) && currentBuyer.getPassword().equals(password)) {
-				System.out.println("Login successful");
+				System.out.println("Welcome " + currentBuyer.getName());
 				break;
 			}
 			currentBuyer = currentBuyer.getNext();
 		}
-		System.out.println("Login unsuccessful");
 	}
 }

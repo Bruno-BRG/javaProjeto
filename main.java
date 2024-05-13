@@ -47,7 +47,6 @@ public class Main {
 				case 3:
 					accountLogin accountLogin = new accountLogin();
 					accountLogin.login();
-					system.out.println("You are logged in");
 					break;
 				case 4:
 					break;
