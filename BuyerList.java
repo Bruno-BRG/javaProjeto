@@ -38,25 +38,4 @@ public class BuyerList {
 			currentBuyer = currentBuyer.getNext();
 		}
 	}
-
-	public void removeBuyer(String username) {
-		Buyer currentBuyer = head;
-		while (currentBuyer != null) {
-			if (currentBuyer.getUsername().equals(username)) {
-				if (currentBuyer == head) {
-					head = currentBuyer.getNext();
-					head.setPrevious(null);
-				} else if (currentBuyer == tail) {
-					tail = currentBuyer.getPrevious();
-					tail.setNext(null);
-				} else {
-					currentBuyer.getPrevious().setNext(currentBuyer.getNext());
-					currentBuyer.getNext().setPrevious(currentBuyer.getPrevious());
-				}
-				size--;
-				break;
-			}
-			currentBuyer = currentBuyer.getNext();
-		}
-	}
 }
