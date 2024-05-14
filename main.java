@@ -2,13 +2,11 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
-// i want a main class and method that print the options on the screen but doesnt print them when the login is successful if it is successful it will print a different set of options//
-
 public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
-		if (option != 7) {
+		while (option != 7) {
 			System.out.println("1: add a new client");
 			System.out.println("2: add a new buyer");
 			System.out.println("3: Enter in your account");
@@ -59,7 +57,6 @@ public class Main {
 						if (currentClient.getUsername().equals(username)
 								&& currentClient.getPassword().equals(password)) {
 							System.out.println("Welcome " + currentClient.getName());
-							break;
 						}
 						currentClient = currentClient.getNext();
 					}
@@ -67,11 +64,10 @@ public class Main {
 						if (currentBuyer.getUsername().equals(username)
 								&& currentBuyer.getPassword().equals(password)) {
 							System.out.println("Welcome " + currentBuyer.getName());
-							break;
 						}
 						currentBuyer = currentBuyer.getNext();
 					}
-
+					break;
 				case 4:
 					break;
 				case 5:
