@@ -38,4 +38,16 @@ public class BuyerList {
 			currentBuyer = currentBuyer.getNext();
 		}
 	}
+
+	public void checkBuyer(String username, String password) {
+		Buyer currentBuyer = head;
+		while (currentBuyer != null) {
+			if (currentBuyer.getUsername().equals(username) && currentBuyer.getPassword().equals(password)) {
+				System.out.println("Welcome " + currentBuyer.getName());
+				return;
+			}
+			currentBuyer = currentBuyer.getNext();
+		}
+		System.out.println("Username or password is incorrect.");
+	}
 }

@@ -43,11 +43,17 @@ public class ClientList {
 		return size;
 	}
 
-	public void showList() {
-		if (isEmpty()) {
-			System.out.println("The list is empty.");
-		} else {
-			showClients();
+	public void checkClient(String username, String password) {
+		Client currentClient = head;
+		while (currentClient != null) {
+			if (currentClient.getUsername().equals(username) && currentClient.getPassword().equals(password)) {
+				System.out.println("Welcome " + currentClient.getName());
+				break;
+			} else {
+				System.out.println("Username or password is incorrect.");
+				break;
+			}
 		}
 	}
+
 }
