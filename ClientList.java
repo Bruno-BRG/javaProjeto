@@ -27,22 +27,6 @@ public class ClientList {
 		size++;
 	}
 
-	public void showClients() {
-		Client currentClient = head;
-		while (currentClient != null) {
-			System.out.println("Name: " + currentClient.getName());
-			System.out.println("Email: " + currentClient.getEmail());
-			System.out.println("Zip code: " + currentClient.getZip());
-			System.out.println("Password: " + currentClient.getPassword());
-			System.out.println("Username: " + currentClient.getUsername());
-			currentClient = currentClient.getNext();
-		}
-	}
-
-	public int getSize() {
-		return size;
-	}
-
 	public void checkClient(String username, String password) {
 		Client currentClient = head;
 		while (currentClient != null) {

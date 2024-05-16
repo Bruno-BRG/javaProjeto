@@ -27,18 +27,6 @@ public class BuyerList {
 		size++;
 	}
 
-	public void showBuyers() {
-		Buyer currentBuyer = head;
-		while (currentBuyer != null) {
-			System.out.println("Name: " + currentBuyer.getName());
-			System.out.println("Email: " + currentBuyer.getEmail());
-			System.out.println("Zip code: " + currentBuyer.getZip());
-			System.out.println("Password: " + currentBuyer.getPassword());
-			System.out.println("Username: " + currentBuyer.getUsername());
-			currentBuyer = currentBuyer.getNext();
-		}
-	}
-
 	public void checkBuyer(String username, String password) {
 		Buyer currentBuyer = head;
 		while (currentBuyer != null) {
