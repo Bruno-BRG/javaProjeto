@@ -6,14 +6,12 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
-		while (option != 7) {
+		while (option != 5) {
 			System.out.println("1: add a new client");
 			System.out.println("2: add a new buyer");
-			System.out.println("3: Enter in your account");
-			System.out.println("4: add a new product to sell");
-			System.out.println("5: see list of available items");
-			System.out.println("6: see list of bought items");
-			System.out.println("7: exit");
+			System.out.println("3: see list of available items");
+			System.out.println("4: Give review in a product");
+			System.out.println("5: exit");
 			System.out.println("Enter an option: ");
 			option = scanner.nextInt();
 			switch (option) {
@@ -45,36 +43,10 @@ public class Main {
 					Buyer buyer = new Buyer(nameBuyer, emailBuyer, zipBuyer, passwordBuyer, usernameBuyer);
 					break;
 				case 3:
-					System.out.println("Enter your username: ");
-					String username = scanner.next();
-					System.out.println("Enter your password: ");
-					String password = scanner.next();
-					ClientList clientList = new ClientList();
-					BuyerList buyerList = new BuyerList();
-					Client currentClient = clientList.head;
-					Buyer currentBuyer = buyerList.head;
-					while (currentClient != null) {
-						if (currentClient.getUsername().equals(username)
-								&& currentClient.getPassword().equals(password)) {
-							System.out.println("Welcome " + currentClient.getName());
-						}
-						currentClient = currentClient.getNext();
-					}
-					while (currentBuyer != null) {
-						if (currentBuyer.getUsername().equals(username)
-								&& currentBuyer.getPassword().equals(password)) {
-							System.out.println("Welcome " + currentBuyer.getName());
-						}
-						currentBuyer = currentBuyer.getNext();
-					}
 					break;
 				case 4:
 					break;
 				case 5:
-					break;
-				case 6:
-					break;
-				case 7:
 					break;
 				default:
 					System.out.println("Invalid option");
