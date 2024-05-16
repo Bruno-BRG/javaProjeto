@@ -3,7 +3,7 @@ package mercadoLivre;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
 		while (option != 4) {
@@ -29,7 +29,6 @@ public class Main {
 					break;
 
 				case 2:
-					// access the list of items and show all of the on the screen
 					itemList.showItems();
 					break;
 				case 3:
