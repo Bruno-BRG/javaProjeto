@@ -29,6 +29,8 @@ public class Main {
 					break;
 
 				case 2:
+					itemList itemList = new itemList();
+					itemList.showItems();
 					break;
 				case 3:
 					break;

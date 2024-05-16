@@ -50,11 +50,25 @@ public class itemList {
 				System.out.println("Item found: " + currentItem.getName());
 				break;
 			} else {
-				System.out.println("Item not found.");
+				System.out.println("Item not foun.");
 				break;
 			}
 		}
 	}
-}
+	// add 10 items here for unit test of the class
 
-// fill the stack with 10 random items
+	public static void main(String[] args) {
+		itemList list = new itemList();
+		list.addItem("item1", "description1", 10.0, 10);
+		list.addItem("item2", "description2", 20.0, 20);
+		list.addItem("item3", "description3", 30.0, 30);
+		list.addItem("item4", "description4", 40.0, 40);
+		list.addItem("item5", "description5", 50.0, 50);
+		list.addItem("item6", "description6", 60.0, 60);
+		list.addItem("item7", "description7", 70.0, 70);
+		list.addItem("item8", "description8", 80.0, 80);
+		list.addItem("item9", "description9", 90.0, 90);
+		list.addItem("item10", "description10", 100.0, 100);
+		list.showItems();
+	}
+}
