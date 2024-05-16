@@ -2,73 +2,69 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
-//i want a class that will store the list of items in a stack
-
 public class itemList {
-	public Item head;
-	public Item tail;
-	public int size;
+	public Item[] productStack;
+	public int top;
 
-	public itemList() {
-		this.head = null;
-		this.tail = null;
-		this.size = 0;
+	public itemList(int capacity) {
+		this.capacity = capacity;
+		productStack = new Item[capacity];
+		top = -1;
 	}
 
-	public void addItem(String name, String description, double price, int quantity) {
-		Item newItem = new Item(name, description, price, quantity);
-		if (head == null) {
-			head = newItem;
-			tail = newItem;
+	// Method to add a product to the stack
+	public void addProduct(Item Item) {
+		if (top < capacity - 1) {
+			productStack[++top] = Item;
+			System.out.println("Added: " + Item);
 		} else {
-			tail.setNext(newItem);
-			newItem.setPrevious(tail);
-			tail = newItem;
-		}
-		size++;
-	}
-
-	public void showItems() {
-		Item currentItem = head;
-		while (currentItem != null) {
-			System.out.println("Name: " + currentItem.getName());
-			System.out.println("Description: " + currentItem.getDescription());
-			System.out.println("Price: " + currentItem.getPrice());
-			System.out.println("Quantity: " + currentItem.getQuantity());
-			currentItem = currentItem.getNext();
+			System.out.println("Stack is full! Cannot add product: " + Item);
 		}
 	}
 
-	public int getSize() {
-		return size;
-	}
-
-	public void checkItem(String name) {
-		Item currentItem = head;
-		while (currentItem != null) {
-			if (currentItem.getName().equals(name)) {
-				System.out.println("Item found: " + currentItem.getName());
-				break;
-			} else {
-				System.out.println("Item not foun.");
-				break;
-			}
+	// Method to remove a product from the stack
+	public Product removeProduct() {
+		if (top >= 0) {
+			Product removedProduct = productStack[top--];
+			System.out.println("Removed: " + removedProduct);
+			return removedProduct;
+		} else {
+			System.out.println("No products to remove!");
+			return null;
 		}
 	}
-	// add 10 items here for unit test of the class
+
+	// Method to view the product on top of the stack
+	public Product peekProduct() {
+		if (top >= 0) {
+			return productStack[top];
+		} else {
+			System.out.println("No products to view!");
+			return null;
+		}
+	}
+
+	// Method to check if the stack is empty
+	public boolean isEmpty() {
+		return top == -1;
+	}
 
 	public static void main(String[] args) {
-		itemList list = new itemList();
-		list.addItem("item1", "description1", 10.0, 10);
-		list.addItem("item2", "description2", 20.0, 20);
-		list.addItem("item3", "description3", 30.0, 30);
-		list.addItem("item4", "description4", 40.0, 40);
-		list.addItem("item5", "description5", 50.0, 50);
-		list.addItem("item6", "description6", 60.0, 60);
-		list.addItem("item7", "description7", 70.0, 70);
-		list.addItem("item8", "description8", 80.0, 80);
-		list.addItem("item9", "description9", 90.0, 90);
-		list.addItem("item10", "description10", 100.0, 100);
-		list.showItems();
+		Store store = new Store(3);
+
+		// Adding products to the store
+		store.addProduct(new Item(1, "Laptop", 999.99));
+		store.addProduct(new Item(2, "Smartphone", 499.99));
+		store.addProduct(new Item(3, "Tablet", 299.99));
+		store.addProduct(new Itemt(4, "Smartwatch", 199.99)); // Should print "Stack is full!"
+
+		// Peeking the top product
+		System.out.println("Top product: " + store.peekProduct());
+
+		// Removing products from the store
+		store.removeProduct();
+		store.removeProduct();
+		store.removeProduct();
+		store.removeProduct(); // Trying to remove from an empty stack
 	}
 }

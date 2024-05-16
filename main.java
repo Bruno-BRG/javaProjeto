@@ -16,21 +16,20 @@ public class Main {
 			switch (option) {
 				case 1:
 					System.out.println("Enter the name of the client: ");
-					String nameClient = scanner.next();
+					String name = scanner.next();
 					System.out.println("Enter the email of the client: ");
-					String emailClient = scanner.next();
+					String email = scanner.next();
 					System.out.println("Enter the zip code of the client: ");
-					String zipClient = scanner.next();
+					String zip = scanner.next();
 					System.out.println("Enter the password of the client: ");
-					String passwordClient = scanner.next();
+					String password = scanner.next();
 					System.out.println("Enter the username of the client: ");
-					String usernameClient = scanner.next();
-					Client client = new Client(nameClient, emailClient, zipClient, passwordClient, usernameClient);
+					String username = scanner.next();
+					Client client = new Client(name, email, zip, password, username);
 					break;
 
 				case 2:
-					itemList itemList = new itemList();
-					itemList.showItems();
+
 					break;
 				case 3:
 					break;

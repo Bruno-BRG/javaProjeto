@@ -3,46 +3,46 @@ package mercadoLivre;
 import java.util.Scanner;
 
 public class Client {
-	String nameClient;
-	String emailClient;
-	String zipClient;
-	String passwordClient;
-	String usernameClient;
-	Client nextClient;
-	Client previousClient;
+	String name;
+	String email;
+	String zip;
+	String password;
+	String username;
+	Client next;
+	Client previous;
 
 	public Client(String name, String email, String zip, String password, String username) {
-		this.nameClient = name;
-		this.emailClient = email;
-		this.zipClient = zip;
-		this.passwordClient = password;
-		this.usernameClient = username;
-		this.nextClient = null;
-		this.previousClient = null;
+		this.name = name;
+		this.email = email;
+		this.zip = zip;
+		this.password = password;
+		this.username = username;
+		this.next = null;
+		this.previous = null;
 	}
 
 	public String getName() {
-		return nameClient;
+		return name;
 	}
 
 	public String getEmail() {
-		return emailClient;
+		return email;
 	}
 
 	public String getZip() {
-		return zipClient;
+		return zip;
 	}
 
 	public String getPassword() {
-		return passwordClient;
+		return password;
 	}
 
 	public String getUsername() {
-		return usernameClient;
+		return username;
 	}
 
 	public Client getNext() {
-		return nextClient;
+		return next;
 	}
 
 	public void setNext(Client next) {
@@ -50,7 +50,7 @@ public class Client {
 	}
 
 	public Client getPrevious() {
-		return previousClient;
+		return previous;
 	}
 
 	public void setPrevious(Client previous) {
