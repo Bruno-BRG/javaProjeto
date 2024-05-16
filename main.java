@@ -29,7 +29,8 @@ public class Main {
 					break;
 
 				case 2:
-
+					// access the list of items and show all of the on the screen
+					itemList.showItems();
 					break;
 				case 3:
 					break;

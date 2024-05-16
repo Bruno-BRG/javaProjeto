@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class itemList {
 	public Item[] productStack;
 	public int top;
+	public int capacity;
 
 	public itemList(int capacity) {
 		this.capacity = capacity;
@@ -23,9 +24,9 @@ public class itemList {
 	}
 
 	// Method to remove a product from the stack
-	public Product removeProduct() {
+	public Item removeProduct() {
 		if (top >= 0) {
-			Product removedProduct = productStack[top--];
+			Item removedProduct = productStack[top--];
 			System.out.println("Removed: " + removedProduct);
 			return removedProduct;
 		} else {
@@ -35,7 +36,7 @@ public class itemList {
 	}
 
 	// Method to view the product on top of the stack
-	public Product peekProduct() {
+	public Item peekProduct() {
 		if (top >= 0) {
 			return productStack[top];
 		} else {
@@ -49,22 +50,36 @@ public class itemList {
 		return top == -1;
 	}
 
-	public static void main(String[] args) {
-		Store store = new Store(3);
+	// method to show all items on the stack
+	public void showItems() {
+		for (int i = 0; i < productStack.length; i++) {
+			System.out.println(productStack[i]);
+		}
+	}
 
-		// Adding products to the store
-		store.addProduct(new Item(1, "Laptop", 999.99));
-		store.addProduct(new Item(2, "Smartphone", 499.99));
-		store.addProduct(new Item(3, "Tablet", 299.99));
-		store.addProduct(new Itemt(4, "Smartwatch", 199.99)); // Should print "Stack is full!"
+	// method to add 10 standard items to the stack
 
-		// Peeking the top product
-		System.out.println("Top product: " + store.peekProduct());
+	public void addStandardItems() {
+		Item item1 = new Item("Item1", "description", 10.0, 1);
+		Item item2 = new Item("Item2", "description", 20.0, 2);
+		Item item3 = new Item("Item3", "description", 30.0, 3);
+		Item item4 = new Item("Item4", "description", 40.0, 4);
+		Item item5 = new Item("Item5", "description", 50.0, 5);
+		Item item6 = new Item("Item6", "description", 60.0, 6);
+		Item item7 = new Item("Item7", "description", 70.0, 7);
+		Item item8 = new Item("Item8", "description", 80.0, 8);
+		Item item9 = new Item("Item9", "description", 90.0, 9);
+		Item item10 = new Item("Item10", "description", 100.0, 10);
 
-		// Removing products from the store
-		store.removeProduct();
-		store.removeProduct();
-		store.removeProduct();
-		store.removeProduct(); // Trying to remove from an empty stack
+		addProduct(item1);
+		addProduct(item2);
+		addProduct(item3);
+		addProduct(item4);
+		addProduct(item5);
+		addProduct(item6);
+		addProduct(item7);
+		addProduct(item8);
+		addProduct(item9);
+		addProduct(item10);
 	}
 }

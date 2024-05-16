@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class Item {
 	String nameItem;
 	String descriptionItem;
-	String priceItem;
-	String sellerItem;
+	double priceItem;
+	int quantityItem;
 	Item nextItem;
 	Item previousItem;
 
-	public Item(String name, String description, String price, String seller) {
+	public Item(String name, String description, double price, int quantity) {
 		this.nameItem = name;
 		this.descriptionItem = description;
 		this.priceItem = price;
-		this.sellerItem = seller;
+		this.quantityItem = quantity;
 		this.nextItem = null;
 		this.previousItem = null;
 	}
@@ -27,12 +27,12 @@ public class Item {
 		return descriptionItem;
 	}
 
-	public String getPrice() {
+	public double getPrice() {
 		return priceItem;
 	}
 
-	public String getSeller() {
-		return sellerItem;
+	public int getQuantity() {
+		return quantityItem;
 	}
 
 	public Item getNext() {
