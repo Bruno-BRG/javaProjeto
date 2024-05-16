@@ -51,10 +51,8 @@ public class itemList {
 	}
 
 	// method to show all items on the stack
-	public void showItems() {
-		for (int i = 0; i < productStack.length; i++) {
-			System.out.println(productStack[i]);
-		}
+	public void showItem() {
+		
 	}
 
 	// method to add 10 standard items to the stack
