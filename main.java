@@ -3,7 +3,7 @@ package mercadoLivre;
 import java.util.Scanner;
 
 public class Main {
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
 		while (option != 4) {
@@ -29,7 +29,16 @@ public class Main {
 					break;
 
 				case 3:
-					itemList.showItems();
+					System.out.println("Enter the name of the product: ");
+					String productName = scanner.next();
+					System.out.println("Enter the price of the product: ");
+					String price = scanner.next();
+					System.out.println("Enter the quantity of the product: ");
+					String quantity = scanner.next();
+					System.out.println("Enter the description of the product: ");
+					String description = scanner.next();
+					Item item = new Item(productName, price, quantity, description);
+					
 					break;
 				case 4:
 					break;
