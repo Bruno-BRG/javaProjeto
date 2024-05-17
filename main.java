@@ -14,7 +14,7 @@ public class Main {
 			System.out.println("Enter an option: ");
 			option = scanner.nextInt();
 			switch (option) {
-				case 2:
+				case 1:
 					System.out.println("Enter the name of the client: ");
 					String name = scanner.next();
 					System.out.println("Enter the email of the client: ");
@@ -28,7 +28,7 @@ public class Main {
 					Client client = new Client(name, email, zip, password, username);
 					break;
 
-				case 3:
+				case 2:
 					System.out.println("Enter the name of the product: ");
 					String productName = scanner.next();
 					System.out.println("Enter the price of the product: ");
@@ -40,9 +40,9 @@ public class Main {
 					Item item = new Item(productName, price, quantity, description);
 					
 					break;
-				case 4:
+				case 3:
 					break;
-				case 5:
+				case 4:
 					break;
 				default:
 					System.out.println("Invalid option");
