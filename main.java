@@ -6,12 +6,13 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
-		while (option != 5) {
+		while (option != 6) {
 			System.out.println("1: Make a new account");
 			System.out.println("2: see list of available items");
 			System.out.println("3: Make a purchase");
-			System.out.println("4: give review on a product");
-			System.out.println("5: exit");
+			System.out.println("4: Show all recent purchases");
+			System.out.println("5: Give review to any recent bough products");
+			System.out.println("6: exit");
 			System.out.println("Enter an option: ");
 			option = scanner.nextInt();
 			switch (option) {
@@ -47,14 +48,16 @@ public class Main {
 				case 3:
 					purchaseTree purchase = new purchaseTree("itemID1");
 					purchase.addPurchase("itemID2");
-					purchase.addPurchase("itemID3");
-					purchase.addPurchase("itemID4");
-					purchase.addPurchase("itemID5");
 					purchase.showPurchase();
 					break;
 				case 4:
+					purchaseTree purchaseTree = new purchaseTree("itemID1");
+					purchaseTree.addPurchase("itemID2");
+					purchaseTree.showPurchase();
 					break;
 				case 5:
+					break;
+				case 6:
 					break;
 				default:
 					System.out.println("Invalid option");
