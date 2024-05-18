@@ -45,11 +45,11 @@ public class Main {
 					item.showItem();
 					break;
 				case 3:
-					// ask for the itemID and add it to the purchase tree
-					System.out.println("Enter the itemID: ");
-					String itemID = scanner.next();
-					purchaseTree purchase = new purchaseTree(itemID);
-					purchase.addPurchase(itemID);
+					purchaseTree purchase = new purchaseTree("itemID1");
+					purchase.addPurchase("itemID2");
+					purchase.addPurchase("itemID3");
+					purchase.addPurchase("itemID4");
+					purchase.addPurchase("itemID5");
 					purchase.showPurchase();
 					break;
 				case 4:
