@@ -17,21 +17,9 @@ public class itemList {
 	public void addProduct(Item Item) {
 		if (top < capacity - 1) {
 			productStack[++top] = Item;
-			System.out.println("Added: " + Item);
+			System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem + " " + Item.priceItem + " " + Item.quantityItem);
 		} else {
 			System.out.println("Stack is full! Cannot add product: " + Item);
-		}
-	}
-
-	// Method to remove a product from the stack
-	public Item removeProduct() {
-		if (top >= 0) {
-			Item removedProduct = productStack[top--];
-			System.out.println("Removed: " + removedProduct);
-			return removedProduct;
-		} else {
-			System.out.println("No products to remove!");
-			return null;
 		}
 	}
 
@@ -55,7 +43,9 @@ public class itemList {
 		if (top >= 0) {
 			System.out.println("Items in the stack:");
 			for (int i = top; i >= 0; i--) {
-				System.out.println(productStack[i]);
+				// i want to print all the name of all the items in the list
+				System.out.println(productStack[i].nameItem + " " + productStack[i].descriptionItem + " " + productStack[i].priceItem + " " + productStack[i].quantityItem);	
+
 			}
 		} else {
 			System.out.println("No items to show!");
