@@ -40,4 +40,16 @@ public class purchaseTree {
 			right.showPurchase();
 		}
 	}
+
+	// make a method with the intent of unit testing i want the method to put 5
+	// items into the tree and then show the tree
+	public void testPurchase() {
+		purchaseTree purchase = new purchaseTree("itemID1");
+		purchase.addPurchase("itemID2");
+		purchase.addPurchase("itemID3");
+		purchase.addPurchase("itemID4");
+		purchase.addPurchase("itemID5");
+		purchase.showPurchase();
+	}
+
 }
