@@ -17,7 +17,9 @@ public class itemList {
 	public void addProduct(Item Item) {
 		if (top < capacity - 1) {
 			productStack[++top] = Item;
-			System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem + " " + Item.priceItem + " " + Item.quantityItem);
+			// System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem + "
+			// " + Item.priceItem + " "
+			// + Item.quantityItem + " " + Item.itemID);
 		} else {
 			System.out.println("Stack is full! Cannot add product: " + Item);
 		}
@@ -44,7 +46,9 @@ public class itemList {
 			System.out.println("Items in the stack:");
 			for (int i = top; i >= 0; i--) {
 				// i want to print all the name of all the items in the list
-				System.out.println(productStack[i].nameItem + " " + productStack[i].descriptionItem + " " + productStack[i].priceItem + " " + productStack[i].quantityItem);	
+				System.out.println(productStack[i].nameItem + " " + productStack[i].descriptionItem + " "
+						+ productStack[i].priceItem + " " + productStack[i].quantityItem + " "
+						+ productStack[i].itemID);
 
 			}
 		} else {

@@ -7,14 +7,16 @@ public class Item {
 	String descriptionItem;
 	String priceItem;
 	String quantityItem;
+	String itemID;
 	Item nextItem;
 	Item previousItem;
 
-	public Item(String name, String description, String price, String quantity) {
+	public Item(String name, String description, String price, String quantity, String itemID) {
 		this.nameItem = name;
 		this.descriptionItem = description;
 		this.priceItem = price;
 		this.quantityItem = quantity;
+		this.itemID = itemID;
 		this.nextItem = null;
 		this.previousItem = null;
 	}
@@ -33,6 +35,10 @@ public class Item {
 
 	public String getQuantity() {
 		return quantityItem;
+	}
+
+	public String getItemID() {
+		return itemID;
 	}
 
 	public Item getNext() {
