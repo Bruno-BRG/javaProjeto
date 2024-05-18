@@ -17,8 +17,9 @@ public class itemList {
 	public void addProduct(Item Item) {
 		if (top < capacity - 1) {
 			productStack[++top] = Item;
-			System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem + " " + Item.priceItem + " "
-					+ Item.quantityItem + " " + Item.itemID);
+			// System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem + "
+			// " + Item.priceItem + " "
+			// + Item.quantityItem + " " + Item.itemID);
 		} else {
 			System.out.println("Stack is full! Cannot add product: " + Item);
 		}

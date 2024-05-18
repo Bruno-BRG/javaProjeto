@@ -51,7 +51,6 @@ public class Main {
 					purchaseTree purchase = new purchaseTree(itemID);
 					purchase.addPurchase(itemID);
 					purchase.showPurchase();
-
 					break;
 				case 4:
 					break;
