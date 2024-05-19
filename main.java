@@ -1,11 +1,17 @@
 package mercadoLivre;
 
 import java.util.Scanner;
+import mercadoLivre.Client;
+import mercadoLivre.Item;
+import mercadoLivre.itemList;
+import mercadoLivre.purchaseTree;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
+
+		// switch case para mostrar na tela as oprcoes que o usuario tem
 		while (option != 6) {
 			System.out.println("1: Make a new account");
 			System.out.println("2: see list of available items");
@@ -16,7 +22,11 @@ public class Main {
 			System.out.println("Enter an option: ");
 			option = scanner.nextInt();
 			switch (option) {
+
+				// criar uma nova conta
 				case 1:
+					// aqui ele esta pedindo para o usuario digitar o nome, email, zip code,
+					// password e username
 					System.out.println("Enter the name of the client: ");
 					String name = scanner.next();
 					System.out.println("Enter the email of the client: ");
@@ -28,10 +38,13 @@ public class Main {
 					System.out.println("Enter the username of the client: ");
 					String username = scanner.next();
 					Client client = new Client(name, email, zip, password, username);
+
 					break;
 
+				// Mostrar os items disponiveis na loja
 				case 2:
-					// i want to print all the item in the list here
+					// aqui ele ta adicionando alguns itens na loja usando o metodo addProduct da
+					// classe itemList
 					itemList item = new itemList(10);
 					item.addProduct(new Item("item1", "description1", "price1", "quantity1", "itemID1"));
 					item.addProduct(new Item("item2", "description2", "price2", "quantity2", "itemID2"));
@@ -43,22 +56,42 @@ public class Main {
 					item.addProduct(new Item("item8", "description8", "price8", "quantity8", "itemID8"));
 					item.addProduct(new Item("item9", "description9", "price9", "quantity9", "itemID9"));
 					item.addProduct(new Item("item10", "description10", "price10", "quantity10", "itemID10"));
+
+					// aqui ele esta usando o metodo showItem da classe itemList para mostrar os
+					// itens salvos
 					item.showItem();
+
 					break;
+
+				// fazer uma compra
 				case 3:
-					purchaseTree purchase = new purchaseTree("itemID1");
-					purchase.addPurchase("itemID2");
-					purchase.showPurchase();
+					// aqui ele esta pedindo para o usuario digitar o itemID do item que ele quer
+					// comprar
+					System.out.println("Enter the itemID of the item you want to purchase: ");
+					String itemID = scanner.next();
+
+					// aqui ele esta criando um objeto da classe purchaseTree e chamando o metodo
+					// addPurchase para adicionar o itemID do item que ele quer comprar
+					purchaseTree purchaseTree = new purchaseTree(itemID);
+					purchaseTree.addPurchase(itemID);
+
 					break;
+
+				// mostrar todas as compras recentes
 				case 4:
-					purchaseTree purchaseTree = new purchaseTree("itemID1");
-					purchaseTree.addPurchase("itemID2");
-					purchaseTree.showPurchase();
+					// aqui ele esta criando um objeto da classe purchaseTree e chamando o metodo
+
 					break;
+
+				// dar review para um item comprado recentemente
 				case 5:
 					break;
+
+				// sair do programa
 				case 6:
 					break;
+
+				// caso o usuario digite uma opcao invalida
 				default:
 					System.out.println("Invalid option");
 					break;

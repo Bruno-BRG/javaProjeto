@@ -2,7 +2,7 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
-// i want a binary tree to store the purchases it will and the itemID of the item to the tree 
+// essa classe serve para criar uma arvore binaria que vai salvar as compras feitas
 
 public class purchaseTree {
 	public purchaseTree left;
@@ -15,6 +15,7 @@ public class purchaseTree {
 		this.right = null;
 	}
 
+	// metodo para adicionar uma compra na arvore
 	public void addPurchase(String itemID) {
 		if (itemID.compareTo(this.itemID) < 0) {
 			if (left == null) {
@@ -31,6 +32,7 @@ public class purchaseTree {
 		}
 	}
 
+	// metodo para mostrar as compras feitas
 	public void showPurchase() {
 		if (left != null) {
 			left.showPurchase();

@@ -2,18 +2,21 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
+// essa clase server para inicializar a estrutura da lista encadeada que vai guardar os valores
 public class ClientList {
 
 	public Client head;
 	public Client tail;
 	public int size;
 
+	// construtor para inicializar a lista
 	public ClientList() {
 		this.head = null;
 		this.tail = null;
 		this.size = 0;
 	}
 
+	// metodo para adicionar um cliente na lista
 	public void addClient(String name, String email, String zip, String password, String username) {
 		Client newClient = new Client(name, email, zip, password, username);
 		if (head == null) {
@@ -27,6 +30,7 @@ public class ClientList {
 		size++;
 	}
 
+	// metdodo para verificar se o cliente esta na lista
 	public void checkClient(String username, String password) {
 		Client currentClient = head;
 		while (currentClient != null) {
@@ -39,5 +43,4 @@ public class ClientList {
 			}
 		}
 	}
-
 }
