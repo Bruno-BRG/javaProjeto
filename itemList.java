@@ -2,6 +2,7 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
+// essa classe serve para criar uma lista de itens que vai ser usada para adicionar os itens na loja
 public class itemList {
 	public Item[] productStack;
 	public int top;
@@ -13,7 +14,7 @@ public class itemList {
 		top = -1;
 	}
 
-	// Method to add a product to the stack
+	// metodo para adicionar um produto no stack
 	public void addProduct(Item Item) {
 		if (top < capacity - 1) {
 			productStack[++top] = Item;
@@ -25,7 +26,7 @@ public class itemList {
 		}
 	}
 
-	// Method to view the product on top of the stack
+	// metodo para ver um produto no stack(pilha)
 	public Item peekProduct() {
 		if (top >= 0) {
 			return productStack[top];
@@ -35,12 +36,12 @@ public class itemList {
 		}
 	}
 
-	// Method to check if the stack is empty
+	// metodo para ver se o stack esta vazio
 	public boolean isEmpty() {
 		return top == -1;
 	}
 
-	// method to show all items on the stack
+	// metodo para mostrar todos os itens do stack
 	public void showItem() {
 		if (top >= 0) {
 			System.out.println("Items in the stack:");

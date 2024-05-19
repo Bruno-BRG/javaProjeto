@@ -2,6 +2,7 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
+// essa clase inicializa os valores que serao guaradados e utilizados para a funcionalidade da lista
 public class Client {
 	String name;
 	String email;
@@ -11,6 +12,7 @@ public class Client {
 	Client next;
 	Client previous;
 
+	// construtor para inicializar os clientes
 	public Client(String name, String email, String zip, String password, String username) {
 		this.name = name;
 		this.email = email;
@@ -20,6 +22,8 @@ public class Client {
 		this.next = null;
 		this.previous = null;
 	}
+
+	// metodos para pegar os valores dos clientes
 
 	public String getName() {
 		return name;
@@ -46,7 +50,7 @@ public class Client {
 	}
 
 	public void setNext(Client next) {
-		this.nextClient = next;
+		this.next = next;
 	}
 
 	public Client getPrevious() {
@@ -54,6 +58,6 @@ public class Client {
 	}
 
 	public void setPrevious(Client previous) {
-		this.previousClient = previous;
+		this.previous = previous;
 	}
 }
