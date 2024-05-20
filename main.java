@@ -10,6 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
+		String itemID = null;
 		itemList item = new itemList(10);
 		item.addProduct(new Item("item1", "description1", "price1", "quantity1", "itemID1"));
 		item.addProduct(new Item("item2", "description2", "price2", "quantity2", "itemID2"));
@@ -64,7 +65,7 @@ public class Main {
 					// aqui ele esta pedindo para o usuario digitar o itemID do item que ele quer
 					// comprar
 					System.out.println("Enter the itemID of the item you want to purchase: ");
-					String itemID = scanner.next();
+					itemID = scanner.next();
 
 					purchaseTree purchaseTree = new purchaseTree(itemID);
 					purchaseTree.addPurchase(itemID);
@@ -74,7 +75,8 @@ public class Main {
 
 				// mostrar todas as compras recentes
 				case 4:
-					item.showItem();
+					purchaseTree purchaseTree1 = new purchaseTree(itemID);
+					purchaseTree1.showPurchase();
 					break;
 
 				// dar review para um item comprado recentemente
