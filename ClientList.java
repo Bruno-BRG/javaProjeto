@@ -44,6 +44,7 @@ public class ClientList {
 		}
 	}
 
+	// metodo para mostrar os clientes
 	public void showClients() {
 		Client currentClient = head;
 		while (currentClient != null) {
