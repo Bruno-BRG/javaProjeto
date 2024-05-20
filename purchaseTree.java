@@ -32,6 +32,7 @@ public class purchaseTree {
 		}
 	}
 
+	// metodo para mostrar as compras feitas
 	public void showPurchase() {
 		if (left != null) {
 			left.showPurchase();

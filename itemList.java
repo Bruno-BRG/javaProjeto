@@ -8,6 +8,7 @@ public class itemList {
 	public int top;
 	public int capacity;
 
+	// construtor para inicializar a lista de itens
 	public itemList(int capacity) {
 		this.capacity = capacity;
 		productStack = new Item[capacity];
@@ -25,21 +26,6 @@ public class itemList {
 			System.out.println("Stack is full! Cannot add product: " + itemID);
 		}
 	}
-
-	/*
-	 * // metodo para adicionar um produto no stack
-	 * public void addProduct(Item Item) {
-	 * if (top < capacity - 1) {
-	 * productStack[++top] = Item;
-	 * // System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem
-	 * + "
-	 * // " + Item.priceItem + " "
-	 * // + Item.quantityItem + " " + Item.itemID);
-	 * } else {
-	 * System.out.println("Stack is full! Cannot add product: " + Item);
-	 * }
-	 * }
-	 */
 
 	// metodo para ver um produto no stack(pilha)
 	public Item peekProduct() {
