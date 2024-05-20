@@ -15,6 +15,7 @@ public class itemList {
 		top = -1;
 	}
 
+	// metodo para adicionar um produto na lista
 	public void addProduct(String nameItem, String descriptionItem, String priceItem, String quantityItem,
 			String itemID) {
 		if (top < capacity - 1) {

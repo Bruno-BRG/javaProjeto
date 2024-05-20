@@ -9,6 +9,7 @@ import mercadoLivre.purchaseTree;
 public class Main {
 	public static void main(String[] args) {
 
+		// inicializando as variaveis
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
 		purchaseTree purchaseTree = new purchaseTree("root");
