@@ -8,20 +8,22 @@ import mercadoLivre.purchaseTree;
 
 public class Main {
 	public static void main(String[] args) {
+
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
+		purchaseTree purchaseTree = null;
+		String name = null;
+		String email = null;
+		String zip = null;
+		String password = null;
+		String username = null;
 		String itemID = null;
-		itemList item = new itemList(10);
+		itemList item = new itemList(100);
 		item.addProduct(new Item("item1", "description1", "price1", "quantity1", "itemID1"));
 		item.addProduct(new Item("item2", "description2", "price2", "quantity2", "itemID2"));
 		item.addProduct(new Item("item3", "description3", "price3", "quantity3", "itemID3"));
 		item.addProduct(new Item("item4", "description4", "price4", "quantity4", "itemID4"));
 		item.addProduct(new Item("item5", "description5", "price5", "quantity5", "itemID5"));
-		item.addProduct(new Item("item6", "description6", "price6", "quantity6", "itemID6"));
-		item.addProduct(new Item("item7", "description7", "price7", "quantity7", "itemID7"));
-		item.addProduct(new Item("item8", "description8", "price8", "quantity8", "itemID8"));
-		item.addProduct(new Item("item9", "description9", "price9", "quantity9", "itemID9"));
-		item.addProduct(new Item("item10", "description10", "price10", "quantity10", "itemID10"));
 
 		// switch case para mostrar na tela as oprcoes que o usuario tem
 		while (option != 6) {
@@ -40,15 +42,15 @@ public class Main {
 					// aqui ele esta pedindo para o usuario digitar o nome, email, zip code,
 					// password e username
 					System.out.println("Enter the name of the client: ");
-					String name = scanner.next();
+					name = scanner.next();
 					System.out.println("Enter the email of the client: ");
-					String email = scanner.next();
+					email = scanner.next();
 					System.out.println("Enter the zip code of the client: ");
-					String zip = scanner.next();
+					zip = scanner.next();
 					System.out.println("Enter the password of the client: ");
-					String password = scanner.next();
+					password = scanner.next();
 					System.out.println("Enter the username of the client: ");
-					String username = scanner.next();
+					username = scanner.next();
 
 					ClientList ClientList = new ClientList();
 					ClientList.addClient(name, email, zip, password, username);
@@ -67,7 +69,7 @@ public class Main {
 					System.out.println("Enter the itemID of the item you want to purchase: ");
 					itemID = scanner.next();
 
-					purchaseTree purchaseTree = new purchaseTree(itemID);
+					purchaseTree = new purchaseTree(itemID);
 					purchaseTree.addPurchase(itemID);
 					System.out.println("Purchase made successfully");
 					purchaseTree.showPurchase();
@@ -75,8 +77,7 @@ public class Main {
 
 				// mostrar todas as compras recentes
 				case 4:
-					purchaseTree purchaseTree1 = new purchaseTree(itemID);
-					purchaseTree1.showPurchase();
+					purchaseTree.showPurchase();
 					break;
 
 				// dar review para um item comprado recentemente
