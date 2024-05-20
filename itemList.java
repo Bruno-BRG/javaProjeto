@@ -14,17 +14,32 @@ public class itemList {
 		top = -1;
 	}
 
-	// metodo para adicionar um produto no stack
-	public void addProduct(Item Item) {
+	public void addProduct(String nameItem, String descriptionItem, String priceItem, String quantityItem,
+			String itemID) {
 		if (top < capacity - 1) {
-			productStack[++top] = Item;
+			productStack[++top] = new Item(nameItem, descriptionItem, priceItem, quantityItem, itemID);
 			// System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem + "
 			// " + Item.priceItem + " "
 			// + Item.quantityItem + " " + Item.itemID);
 		} else {
-			System.out.println("Stack is full! Cannot add product: " + Item);
+			System.out.println("Stack is full! Cannot add product: " + itemID);
 		}
 	}
+
+	/*
+	 * // metodo para adicionar um produto no stack
+	 * public void addProduct(Item Item) {
+	 * if (top < capacity - 1) {
+	 * productStack[++top] = Item;
+	 * // System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem
+	 * + "
+	 * // " + Item.priceItem + " "
+	 * // + Item.quantityItem + " " + Item.itemID);
+	 * } else {
+	 * System.out.println("Stack is full! Cannot add product: " + Item);
+	 * }
+	 * }
+	 */
 
 	// metodo para ver um produto no stack(pilha)
 	public Item peekProduct() {

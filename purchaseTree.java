@@ -5,9 +5,9 @@ import java.util.Scanner;
 // essa classe serve para criar uma arvore binaria que vai salvar as compras feitas
 
 public class purchaseTree {
-	public purchaseTree left;
-	public purchaseTree right;
-	public String itemID;
+	purchaseTree left;
+	purchaseTree right;
+	String itemID;
 
 	public purchaseTree(String itemID) {
 		this.itemID = itemID;
@@ -32,7 +32,6 @@ public class purchaseTree {
 		}
 	}
 
-	// metodo para mostrar as compras feitas
 	public void showPurchase() {
 		if (left != null) {
 			left.showPurchase();

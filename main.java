@@ -10,6 +10,23 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
+<<<<<<< Updated upstream
+=======
+		purchaseTree purchaseTree = new purchaseTree("root");
+		String name = null;
+		String email = null;
+		String zip = null;
+		String password = null;
+		String username = null;
+		String itemID = null;
+		ClientList ClientList = new ClientList();
+		itemList item = new itemList(100);
+		item.addProduct("item1", "description1", "price1", "quantity1", "itemID1");
+		item.addProduct("item2", "description2", "price2", "quantity2", "itemID2");
+		item.addProduct("item3", "description3", "price3", "quantity3", "itemID3");
+		item.addProduct("item4", "description4", "price4", "quantity4", "itemID4");
+		item.addProduct("item5", "description5", "price5", "quantity5", "itemID5");
+>>>>>>> Stashed changes
 
 		// switch case para mostrar na tela as oprcoes que o usuario tem
 		while (option != 6) {
@@ -39,6 +56,11 @@ public class Main {
 					String username = scanner.next();
 					Client client = new Client(name, email, zip, password, username);
 
+<<<<<<< Updated upstream
+=======
+					ClientList.addClient(name, email, zip, password, username);
+					ClientList.showClients();
+>>>>>>> Stashed changes
 					break;
 
 				// Mostrar os items disponiveis na loja
@@ -70,9 +92,13 @@ public class Main {
 					System.out.println("Enter the itemID of the item you want to purchase: ");
 					String itemID = scanner.next();
 
+<<<<<<< Updated upstream
 					// aqui ele esta criando um objeto da classe purchaseTree e chamando o metodo
 					// addPurchase para adicionar o itemID do item que ele quer comprar
 					purchaseTree purchaseTree = new purchaseTree(itemID);
+=======
+					// purchaseTree = new purchaseTree(itemID);
+>>>>>>> Stashed changes
 					purchaseTree.addPurchase(itemID);
 
 					break;
