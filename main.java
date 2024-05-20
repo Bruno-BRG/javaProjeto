@@ -11,19 +11,20 @@ public class Main {
 
 		Scanner scanner = new Scanner(System.in);
 		int option = 0;
-		purchaseTree purchaseTree = null;
+		purchaseTree purchaseTree = new purchaseTree("root");
 		String name = null;
 		String email = null;
 		String zip = null;
 		String password = null;
 		String username = null;
 		String itemID = null;
+		ClientList ClientList = new ClientList();
 		itemList item = new itemList(100);
-		item.addProduct(new Item("item1", "description1", "price1", "quantity1", "itemID1"));
-		item.addProduct(new Item("item2", "description2", "price2", "quantity2", "itemID2"));
-		item.addProduct(new Item("item3", "description3", "price3", "quantity3", "itemID3"));
-		item.addProduct(new Item("item4", "description4", "price4", "quantity4", "itemID4"));
-		item.addProduct(new Item("item5", "description5", "price5", "quantity5", "itemID5"));
+		item.addProduct("item1", "description1", "price1", "quantity1", "itemID1");
+		item.addProduct("item2", "description2", "price2", "quantity2", "itemID2");
+		item.addProduct("item3", "description3", "price3", "quantity3", "itemID3");
+		item.addProduct("item4", "description4", "price4", "quantity4", "itemID4");
+		item.addProduct("item5", "description5", "price5", "quantity5", "itemID5");
 
 		// switch case para mostrar na tela as oprcoes que o usuario tem
 		while (option != 6) {
@@ -52,7 +53,6 @@ public class Main {
 					System.out.println("Enter the username of the client: ");
 					username = scanner.next();
 
-					ClientList ClientList = new ClientList();
 					ClientList.addClient(name, email, zip, password, username);
 					ClientList.showClients();
 					break;
@@ -69,7 +69,7 @@ public class Main {
 					System.out.println("Enter the itemID of the item you want to purchase: ");
 					itemID = scanner.next();
 
-					purchaseTree = new purchaseTree(itemID);
+					// purchaseTree = new purchaseTree(itemID);
 					purchaseTree.addPurchase(itemID);
 					System.out.println("Purchase made successfully");
 					purchaseTree.showPurchase();
