@@ -5,13 +5,13 @@ import java.util.Scanner;
 // i want a class that will take a string as the review of a product, it must ask for the itemID, a rating and a string as the review the review must be saved in a queue
 
 public class reviewQueue {
-	public reviewQueue next;
-	public String itemID;
-	public int rating;
-	public String review;
-	public reviewQueue head;
-	public reviewQueue tail;
-	public int size;
+	reviewQueue next;
+	String itemID;
+	int rating;
+	String review;
+	reviewQueue head;
+	reviewQueue tail;
+	int size;
 
 	// constructor to initialize the queue
 	public reviewQueue() {
@@ -45,5 +45,5 @@ public class reviewQueue {
 			System.out.println("Review: " + currentReview.review);
 			currentReview = currentReview.next;
 		}
-	}	
+	}
 }
