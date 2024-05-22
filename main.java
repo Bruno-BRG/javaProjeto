@@ -4,8 +4,9 @@ import java.util.Scanner;
 import mercadoLivre.cliente;
 import mercadoLivre.listaCliente;
 import mercadoLivre.Item;
-import mercadoLivre.itemList;
-import mercadoLivre.purchaseTree;
+import mercadoLivre.listaItens;
+import mercadoLivre.arvoreCompras;
+import mercadoLivre.filaReview;
 
 public class Main {
 	public static void main(String[] args) {
@@ -24,15 +25,15 @@ public class Main {
 		int nota = 0;
 		String review = null;
 
-		purchaseTree purchaseTree = new purchaseTree("root");
-		reviewQueue reviewQueue = new reviewQueue();
-		listaCliente listaCliente = new listaCliente();
-		itemList item = new itemList(100);
-		item.addProduct("item1", "description1", "price1", "quantity1", "itemID1");
-		item.addProduct("item2", "description2", "price2", "quantity2", "itemID2");
-		item.addProduct("item3", "description3", "price3", "quantity3", "itemID3");
-		item.addProduct("item4", "description4", "price4", "quantity4", "itemID4");
-		item.addProduct("item5", "description5", "price5", "quantity5", "itemID5");
+		arvoreCompras compras = new arvoreCompras("root");
+		filaReview filaReview = new filaReview();
+		listaCliente cliente = new listaCliente();
+		listaItens item = new listaItens(100);
+		item.adicionarProduto("item1", "description1", "price1", "quantity1", "itemID1");
+		item.adicionarProduto("item2", "description2", "price2", "quantity2", "itemID2");
+		item.adicionarProduto("item3", "description3", "price3", "quantity3", "itemID3");
+		item.adicionarProduto("item4", "description4", "price4", "quantity4", "itemID4");
+		item.adicionarProduto("item5", "description5", "price5", "quantity5", "itemID5");
 
 		// switch case para mostrar na tela as oprcoes que o usuario tem
 		while (option != 6) {
@@ -60,45 +61,52 @@ public class Main {
 					senha = scanner.next();
 					System.out.println("Digite seu nome de usuario: ");
 					username = scanner.next();
+					System.out.println("Conta criada com sucesso!");
+					System.out.println("-----------------------------");
 
-					listaCliente.addClient(nome, email, cep, senha, username);
-					listaCliente.showClients();
+					cliente.adicionarCliente(nome, email, cep, senha, username);
+					cliente.mostrarClientes();
 					break;
 
 				// Mostrar os items disponiveis na loja
 				case 2:
-					item.showItem();
+					item.mostrarItens();
 					break;
 
 				// fazer uma compra
 				case 3:
 					// aqui ele esta pedindo para o usuario digitar o itemID do item que ele quer
 					// comprar
-					System.out.println("Enter the itemID of the item you want to purchase: ");
+					System.out.println("Digite o Id do item que deseja comprar(itemID1): ");
 					itemID = scanner.next();
 
 					// purchaseTree = new purchaseTree(itemID);
-					purchaseTree.addPurchase(itemID);
-					System.out.println("Purchase made successfully");
-					purchaseTree.showPurchase();
+					compras.adicionarCompra(itemID);
+					System.out.println("Compra registrada com sucesso!");
+					System.out.println("-----------------------------");
+					compras.mostrarCompras();
 					break;
 
 				// mostrar todas as compras recentes
 				case 4:
-					purchaseTree.showPurchase();
+					System.out.println("-----------------------------");
+					System.out.println("Compras recentes: ");
+					System.out.println(" ");
+					compras.mostrarCompras();
 					break;
 
 				// dar review para um item comprado recentemente
 				case 5:
-					System.out.println("Enter the itemID of the item you want to review: ");
+					System.out.println("Digite a Id do item que deseja fazer a review: ");
 					itemIDReview = scanner.next();
-					System.out.println("Enter the rating from 1 to 5");
+					System.out.println("Digite uma note de 1 a 5");
 					nota = scanner.nextInt();
-					System.out.println("Enter the review: ");
+					System.out.println("Escreva sua review: ");
 					review = scanner.next();
-					System.out.println("Review added successfully");
-					reviewQueue.addReview(itemIDReview, nota, review);
-					reviewQueue.showReviews();
+					System.out.println("Review adicionada com sucesso!");
+					filaReview.adicionarReview(itemIDReview, nota, review);
+					System.out.println("-----------------------------");
+					filaReview.mostrarReviews();
 					break;
 
 				// sair do programa
@@ -107,7 +115,7 @@ public class Main {
 
 				// caso o usuario digite uma opcao invalida
 				default:
-					System.out.println("Invalid option");
+					System.out.println("Opcao invalida!");
 					break;
 			}
 		}
