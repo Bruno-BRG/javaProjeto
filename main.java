@@ -1,12 +1,15 @@
 package mercadoLivre;
 
 import java.util.Scanner;
+
+/*
 import mercadoLivre.cliente;
 import mercadoLivre.listaCliente;
 import mercadoLivre.Item;
 import mercadoLivre.listaItens;
 import mercadoLivre.arvoreCompras;
 import mercadoLivre.filaReview;
+*/
 
 public class Main {
 	public static void main(String[] args) {
@@ -25,10 +28,10 @@ public class Main {
 		int nota = 0;
 		String review = null;
 
-		arvoreCompras compras = new arvoreCompras("root");
+		arvoreCompras compras = new arvoreCompras("raiz");
 		filaReview filaReview = new filaReview();
 		listaCliente cliente = new listaCliente();
-		listaItens item = new listaItens(100);
+		listaItens item = new listaItens(10);
 		item.adicionarProduto("item1", "description1", "price1", "quantity1", "itemID1");
 		item.adicionarProduto("item2", "description2", "price2", "quantity2", "itemID2");
 		item.adicionarProduto("item3", "description3", "price3", "quantity3", "itemID3");
@@ -80,7 +83,6 @@ public class Main {
 					System.out.println("Digite o Id do item que deseja comprar(itemID1): ");
 					itemID = scanner.next();
 
-					// purchaseTree = new purchaseTree(itemID);
 					compras.adicionarCompra(itemID);
 					System.out.println("Compra registrada com sucesso!");
 					System.out.println("-----------------------------");

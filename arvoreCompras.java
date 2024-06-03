@@ -34,11 +34,11 @@ public class arvoreCompras {
 
 	// metodo para mostrar as compras feitas
 	public void mostrarCompras() {
+		System.out.println(itemID);
+		System.out.println("--------------------");
 		if (left != null) {
 			left.mostrarCompras();
 		}
-		System.out.println(itemID);
-		System.out.println("--------------------");
 		if (right != null) {
 			right.mostrarCompras();
 		}
