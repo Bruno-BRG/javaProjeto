@@ -2,15 +2,6 @@ package mercadoLivre;
 
 import java.util.Scanner;
 
-/*
-import mercadoLivre.cliente;
-import mercadoLivre.listaCliente;
-import mercadoLivre.Item;
-import mercadoLivre.listaItens;
-import mercadoLivre.arvoreCompras;
-import mercadoLivre.filaReview;
-*/
-
 public class Main {
 	public static void main(String[] args) {
 
