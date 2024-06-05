@@ -30,20 +30,6 @@ public class listaCliente {
 		tamanho++;
 	}
 
-	// metdodo para verificar se o cliente esta na lista
-	public void checarCliente(String username, String senha) {
-		cliente clienteAtual = head;
-		while (clienteAtual != null) {
-			if (clienteAtual.getUsername().equals(username) && clienteAtual.getSenha().equals(senha)) {
-				System.out.println("Bem-vindo " + clienteAtual.getNome());
-				break;
-			} else {
-				System.out.println("Username ou senha incorretos.");
-				break;
-			}
-		}
-	}
-
 	// metodo para mostrar os clientes
 	public void mostrarClientes() {
 		cliente clienteAtual = head;
