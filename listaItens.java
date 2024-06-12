@@ -36,11 +36,6 @@ public class listaItens {
 		}
 	}
 
-	// metodo para ver se o stack esta vazio
-	public boolean isEmpty() {
-		return top == -1;
-	}
-
 	// metodo para mostrar todos os itens do stack
 	public void mostrarItens() {
 		if (top >= 0) {
