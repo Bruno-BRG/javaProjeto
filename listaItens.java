@@ -20,9 +20,7 @@ public class listaItens {
 			String itemID) {
 		if (top < capacity - 1) {
 			productStack[++top] = new Item(nomeItem, descricaoItem, precoItem, quantidadeItem, itemID);
-			// System.out.println("Added: " + Item.nameItem + " " + Item.descriptionItem + "
-			// " + Item.priceItem + " "
-			// + Item.quantityItem + " " + Item.itemID);
+			
 		} else {
 			System.out.println("Stack esta cheio! Nao foi possivel adicionar o produto: " + itemID);
 		}
