@@ -19,6 +19,7 @@ public class Main {
 		int nota = 0;
 		String review = null;
 
+		//Making the instances first so that the code doesnt creates new instances and deletes the previous along with its values
 		arvoreCompras compras = new arvoreCompras("raiz");
 		filaReview filaReview = new filaReview();
 		listaCliente cliente = new listaCliente();
